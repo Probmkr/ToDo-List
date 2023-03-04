@@ -10,6 +10,8 @@ const saveButton = document.getElementById("saveButton");
 const loadButton = document.getElementById("loadButton");
 const saveAsJsonButton = document.getElementById("saveAsJsonButton");
 const loadFromJsonButton = document.getElementById("loadFromJsonButton");
+const moveUpButton = document.getElementById("moveUpButton");
+const moveDownButton = document.getElementById("moveDownButton");
 
 // initial loading
 window.addEventListener("load", () => {
@@ -17,6 +19,7 @@ window.addEventListener("load", () => {
 });
 
 // some functions
+//   creating new item
 const createNewListItem = (name) => {
   const newItem = document.createElement("li");
   const checkBox = document.createElement("input");
@@ -32,6 +35,7 @@ const createNewListItem = (name) => {
   return newItem;
 };
 
+//   removing empty item
 const removeIfEmpty = (event) => {
   if (event.target.textContent === "") {
     event.target.parentElement.remove();
@@ -156,3 +160,32 @@ saveButton.addEventListener("click", save);
 saveAsJsonButton.addEventListener("click", saveAsJson);
 loadButton.addEventListener("click", load);
 loadFromJsonButton.addEventListener("click", loadFromJson);
+
+// moving items up
+moveUpButton.addEventListener("click", () => {
+  document.querySelectorAll("input[name=item]:checked").forEach((ele) => {
+    todoList.insertBefore(
+      ele.parentElement,
+      ele.parentElement.previousElementSibling
+    );
+  });
+  save();
+});
+
+// moving items down
+moveDownButton.addEventListener("click", () => {
+  Array.prototype.slice
+    .call(document.querySelectorAll("input[name=item]:checked"))
+    .reverse()
+    .forEach((ele) => {
+      try {
+        todoList.insertBefore(
+          ele.parentElement,
+          ele.parentElement.nextElementSibling.nextElementSibling
+        );
+      } catch {
+        todoList.insertBefore(ele.parentElement, todoList.firstChild);
+      }
+    });
+  save();
+});
