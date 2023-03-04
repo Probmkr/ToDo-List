@@ -1,3 +1,3 @@
 # ToDo-List
 
-これは私が日まで作った ToDo-List です。
+これは私が暇で作った ToDo-List です。
