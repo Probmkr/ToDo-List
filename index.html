@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ToDo List</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <h1>ToDo List</h1>
+  <h2 contenteditable id="listTitle" title="click to edit">Title</h2>
+  <div class="button-list">
+    <div class="button"><label for="selectAllBox"><input type="checkbox" id="selectAllBox">select all</label></div>
+    <div class="button" id="deleteItemButton">delete</div>
+    <div class="button" id="saveButton">save</div>
+    <div class="button" id="loadButton">load</div>
+    <div class="button" id="saveAsJsonButton">save as JSON</div>
+    <div class="button" id="loadFromJsonButton">load from JSON</div>
+  </div>
+  <ul id="todoList">
+    <li class="item"><input name="item" type="checkbox"><span class="name" contenteditable>List1</span></li>
+    <li class="item"><input name="item" type="checkbox"><span class="name" contenteditable>List2</span></li>
+    <li class="item"><input name="item" type="checkbox"><span class="name" contenteditable>List3</span></li>
+    <li class="item"><input name="item" type="checkbox"><span class="name" contenteditable>List4</span></li>
+    <li class="item"><input name="item" type="checkbox"><span class="name" contenteditable>List5</span></li>
+  </ul>
+  <div id="addButtonList"><input type="text" id="addButtonInput"><button class="button" id="addButton">add</button>
+  </div>
+</body>
+
+<script src="script.js">
+</script>
+
+</html>

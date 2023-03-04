@@ -1,0 +1,37 @@
+ul {
+  padding-left: 10px;
+}
+
+li.item {
+  list-style: none;
+  margin: 5px;
+}
+
+span.name {
+  display: inline-block;
+  min-width: 300px;
+  background-color: #dbf1d7;
+  padding: 3px;
+  border-radius: 8px;
+}
+
+.button-list {
+  display: flex;
+  flex-direction: row;
+}
+
+.button {
+  user-select: none;
+  display: inline;
+  cursor: pointer;
+  background-color: #e8e5e1d3;
+  padding: 3px;
+  border-radius: 4px;
+  border: 1px gray solid;
+  font-family: inherit;
+  margin: 0 3px;
+}
+
+.button:hover {
+  background-color: #d1cecbd3;
+}
